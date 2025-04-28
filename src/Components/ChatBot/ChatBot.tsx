@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Form } from "./ChatBotStyles";
 
 function ChatBot() {
   const [currentMessage, setCurrentMessage] = useState<string>('');
@@ -36,16 +37,22 @@ function ChatBot() {
   }
   return(
     <div>
-      { messages.map((message, index) => <p key={ index }>{ message }</p>)}
-      <form onSubmit={ sendMessage }>
+      <div style={ { display: 'flex', flexDirection: 'column' } }>
+        { messages.map((message, index) => (
+          <p key={ index }>
+            { message }
+          </p>
+        ))}
+      </div>
+      <Form onSubmit={ sendMessage }>
         <input
           type="text"
           value={ currentMessage }
           onChange={ (event) => setCurrentMessage(event.target.value) }
           placeholder="Digite sua mensagem"
           />
-          <button>Envia</button>
-      </form>
+          <button>Enviar</button>
+      </Form>
     </div>
   )
 }
