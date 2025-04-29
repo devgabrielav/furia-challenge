@@ -1,18 +1,14 @@
-import { Routes, Route } from 'react-router';
 import './App.css';
-import OutletComponent from './Components/Outlet/Outlet';
-import ChatBot from './Components/ChatBot/ChatBot';
-import FanInfo from './Components/FanInfo/FanInfo';
+import HeaderComponent from './Components/Header/Header';
+import MainContent from './Components/MainContent/MainContent';
 
 function App() {
 
   return (
-    <Routes>
-      <Route path='' element={ <OutletComponent /> }>
-        <Route path='/' element={ <ChatBot /> } />
-        <Route path='/fanInfo' element={ <FanInfo /> } />
-      </Route>
-    </Routes>
+    <>
+      <HeaderComponent />
+      <MainContent />
+    </>
   )
 }
 
