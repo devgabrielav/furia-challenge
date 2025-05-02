@@ -1,14 +1,12 @@
-import './App.css';
-import HeaderComponent from './Components/Header/Header';
 import MainContent from './Components/MainContent/MainContent';
+import './styles.css';
 
 function App() {
 
   return (
-    <>
-      <HeaderComponent />
+    <div className='mainPage'>
       <MainContent />
-    </>
+    </div>
   )
 }
 

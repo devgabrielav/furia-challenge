@@ -1,0 +1,68 @@
+import { MessagesType } from "../Components/ChatBot/ChatBot";
+
+export const aboutParagraphs: string[] = [
+  `
+  A FURIA é uma organização brasileira de esports fundada em 2017,
+  com o compromisso de elevar o cenário competitivo por meio de alto desempenho,
+  inovação e uma cultura única.
+  Nosso time de Counter-Strike é conhecido internacionalmente por sua agressividade tática,
+  intensidade e dedicação total.
+  `,
+  `
+  Conquistamos títulos de destaque como a ESL Pro League Season 12: North America,
+  o DreamHack Masters Spring 2020 e o Arctic Invitational 2019,
+  além de participações constantes em Majors e presença entre as melhores equipes do mundo.
+  `,
+  `
+  Representamos não apenas uma equipe, mas um movimento que inspira e transforma o esporte eletrônico.
+  `
+];
+
+type SendMessageType = {
+  event: React.FormEvent<HTMLFormElement>;
+  currentMessage: string;
+  setMessages: React.Dispatch<React.SetStateAction<MessagesType[]>>;
+  messages: MessagesType[];
+  setCurrentMessage: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const chatId = 'furia_id_chat';
+
+export const sendMessage = async ({
+    event, currentMessage, setMessages, setCurrentMessage
+  }: SendMessageType) => {
+  event.preventDefault();
+
+  setMessages((prevMessages) => [
+    ...prevMessages,
+    { user: currentMessage }
+  ]);
+  setCurrentMessage('');
+
+  try {
+    const response = await fetch("http://localhost:3001/send-message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chatId,
+        message: currentMessage,
+      }),
+    });
+
+    const data = await response.json();
+
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { bot: data.success ? data.reply : 'Erro ao enviar mensagem' }
+    ]);
+
+  } catch(error) {
+    console.error("Erro ao enviar mensagem:", error);
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { bot: 'Erro ao enviar mensagem' }
+    ]);
+  }
+}

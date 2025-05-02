@@ -19,19 +19,15 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "node-fetch": "^3.3.2",
-    "node-telegram-bot-api": "^0.66.0",
     "openai": "^4.96.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router": "^7.5.2",
-    "styled-components": "^6.1.17"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/node": "^22.15.2",
-    "@types/node-telegram-bot-api": "^0.64.8",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",

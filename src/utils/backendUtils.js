@@ -1,11 +1,8 @@
 import fetch from 'node-fetch';
-import TelegramBot from 'node-telegram-bot-api';
 import { config } from 'dotenv';
 import { getFuriaUpdatedInfo, getInfosHLTV } from '../utils/scraping.js';
 
 config();
-
-const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: true });
 const apiKey = process.env.PANDASCORE_API_KEY;
 
 const systemPrompt = `
@@ -46,10 +43,6 @@ export const callOpenRouter = async (userMessage) => {
   
   return data.choices[0]?.message?.content || 'Desculpe, não consegui responder.';
 };
-
-export const sendMessageToTelegramBot = (chatId, message) => {
-  bot.sendMessage(chatId, message);
-}
 
 const getTeamId = async () => {
   const data = await fetch('https://api.pandascore.co/teams/furia', {

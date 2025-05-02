@@ -97,5 +97,24 @@ export const fetchMatches = async (): Promise<MatchType[]> => {
   const response = await fetch('http://localhost:3001/matches');
   const matches: MatchType[] = await response.json();
 
-  return matches;
+  return matches.slice(0, 10);
+}
+
+export const dateConvert = (date: string) => {
+  const typedDate = new Date(date);
+  const hours = String(typedDate.getHours()).padStart(2, '0');
+  const minutes = String(typedDate.getMinutes()).padStart(2, '0');
+  const seconds = String(typedDate.getSeconds()).padStart(2, '0');
+
+  const formattedDate = `${hours}:${minutes}:${seconds}s`;
+  return formattedDate;
+}
+
+export const matchType = (type: string, numberOfGames: number): string => {
+  if (type === 'best_of') {
+    return `BO${numberOfGames}`;
+  } else if (type === 'first_to') {
+    return `FT${numberOfGames}`;
+  }
+  return `RBHG${numberOfGames}`
 }

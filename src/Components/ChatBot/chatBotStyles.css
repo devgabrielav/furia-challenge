@@ -1,0 +1,46 @@
+.chatBotMainSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatTitleDiv {
+  display: flex;
+}
+
+.chatBotTitle {}
+
+.furiaLogo {
+  height: 261px;
+  width: 281px;
+}
+
+.paragraphsDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.botParagraphDiv {}
+
+.botParagraph {}
+
+.userParagraphDiv {}
+
+.userParagraph {}
+
+form {
+  display: flex;
+}
+
+.inputForm {}
+
+.formButton {
+  background: none;
+  background-image: url('/src/assets/enterArrow.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 68px;
+  width: 68px;
+}

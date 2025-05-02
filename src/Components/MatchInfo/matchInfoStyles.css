@@ -1,0 +1,102 @@
+.firstSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.matchTitle {
+  background: none;
+  color: #E1B833;
+  font-family: 'Metamorphous';
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5) !important;
+}
+
+.matchesMainDiv {
+  background: linear-gradient(90deg, #2D2D2D 0%, #3F3F3F 100%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 35em;
+  width: 32.125em;
+}
+
+.matchDiv {
+  display: flex;
+}
+
+.matchNameDiv {
+  display: flex;
+}
+.matchLogo {
+  height: 10px;
+  width: 10px;
+}
+
+.matchName {
+  font-family: 'Mina';
+  font-size: 8.5px;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+  font-weight: 400;
+}
+
+.matchStatusInfoDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.matchStatus {
+  color: #FFFFFF;
+}
+
+.matchStatus.running {
+  background-color: #8C0507;
+}
+
+.matchStatus.finished {
+  background-color: #4C4B4B;
+}
+
+.matchI {}
+
+.matchInfoDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.teamsResultsDiv {
+  display: flex;
+}
+.teamName {}
+
+.teamLogo {
+  height: 15px;
+  width: 15px;
+}
+.pointsResult {}
+
+.matchTotal {}
+
+.timeDiv {
+  display: flex;
+}
+
+.timeSpan {}
+
+.liveStreamsDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.liveStreamTitle  {}
+
+.liveStreams {
+  display: flex;
+}
+
+.liveStreamTag {}

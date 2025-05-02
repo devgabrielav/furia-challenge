@@ -1,58 +1,46 @@
 import { useState } from "react";
-import { Form } from "./ChatBotStyles";
+import { sendMessage } from "../../utils/aboutChat";
+import './chatBotStyles.css';
+
+export type MessagesType = { user: string; } | { bot: string; }
 
 function ChatBot() {
   const [currentMessage, setCurrentMessage] = useState<string>('');
-  const [messages, setMessages] = useState<string[]>([]);
+  const [messages, setMessages] = useState<MessagesType[]>([]);
 
-  const chatId = 'furia_id_chat';
-
-  const sendMessage = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    try {
-      const response = await fetch("http://localhost:3001/send-message", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          chatId,
-          message: currentMessage,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setMessages([...messages, `Você: ${currentMessage}`, `Bot: ${data.reply}`]);
-      } else {
-        setMessages([...messages, `Erro ao enviar mensagem`]);
-      }
-      setCurrentMessage('');
-    } catch(error) {
-      console.error("Erro ao enviar mensagem:", error);
-      setMessages([...messages, `Erro ao enviar mensagem`]);
-    }
-  }
   return(
     <div>
-      <div style={ { display: 'flex', flexDirection: 'column' } }>
-        { messages.map((message, index) => (
-          <p key={ index }>
-            { message }
-          </p>
-        ))}
-      </div>
-      <Form onSubmit={ sendMessage }>
+      <section className="chatBotMainSection">
+        <div className="chatTitleDiv">
+          <h2 className="chatBotTitle">FURIA CHAT-BOT</h2>
+          <img className="furiaLogo" src="/src/assets/furiaLogo.png" />
+        </div>
+        <div className="paragraphsDiv">
+          { messages.map((message, index) => (
+            "user" in message ? (
+              <div className="userParagraphDiv" key={index}>
+                <p className="userParagraph">{message.user}</p>
+              </div>
+            ) : (
+              <div className="botParagraphDiv" key={index}>
+                <p className="botParagraph">{message.bot}</p>
+              </div>
+            )
+          ))}
+        </div>
+      </section>
+      <form onSubmit={(event) => sendMessage({
+        event, currentMessage, setMessages, messages, setCurrentMessage
+        }) }>
         <input
           type="text"
           value={ currentMessage }
+          className="inputForm"
           onChange={ (event) => setCurrentMessage(event.target.value) }
           placeholder="Digite sua mensagem"
           />
-          <button>Enviar</button>
-      </Form>
+          <button className="formButton"></button>
+      </form>
     </div>
   )
 }

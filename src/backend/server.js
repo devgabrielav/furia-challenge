@@ -1,6 +1,6 @@
 import express, { json } from 'express';
 import cors from 'cors';
-import { callOpenRouter, getLatestMatches, sendMessageToTelegramBot } from '../utils/backendUtils.js';
+import { callOpenRouter, getLatestMatches } from '../utils/backendUtils.js';
 
 const app = express();
 
@@ -29,7 +29,6 @@ app.post('/send-message', async (req, res) => {
   try {
     const reply = await callOpenRouter(message);
 
-    sendMessageToTelegramBot(chatId, reply);
     res.json({ success: true, reply });
   } catch (error) {
     console.error('Erro ao processar a mensagem:', error);

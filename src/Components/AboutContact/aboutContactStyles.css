@@ -1,0 +1,23 @@
+.mainAboutContactSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {}
+
+.aboutParagraph {}
+
+.socialsDiv {
+  display: flex;
+}
+
+.socialTag {}
+
+.socialLogo {
+  height: 45px;
+  width: 45px;
+}
+
+.contactSpan {}
+
+.obsSpan {}
