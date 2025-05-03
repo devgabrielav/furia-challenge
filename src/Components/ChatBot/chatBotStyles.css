@@ -1,22 +1,42 @@
 .chatBotMainSection {
   display: flex;
   flex-direction: column;
+  height: 670px;
+  width: 400px;
+}
+
+.chatsDiv {
+  border: 3px solid #E1B833;
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px 0px #E1B8332B;
+  background: #252424;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
 }
 
 .chatTitleDiv {
   display: flex;
 }
 
-.chatBotTitle {}
+.chatBotTitle {
+  color: #E1B833;
+  font-family: 'Metamorphous';
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+  text-shadow: 0px 4px 4px 0px #00000073;
+}
 
 .furiaLogo {
-  height: 261px;
-  width: 281px;
+  height: 100px;
+  width: 100px;
 }
 
 .paragraphsDiv {
-  display: flex;
-  flex-direction: column;
 }
 
 .botParagraphDiv {}

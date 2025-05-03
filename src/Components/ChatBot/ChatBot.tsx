@@ -9,12 +9,13 @@ function ChatBot() {
   const [messages, setMessages] = useState<MessagesType[]>([]);
 
   return(
-    <div>
-      <section className="chatBotMainSection">
+    <section className="chatBotMainSection">
         <div className="chatTitleDiv">
-          <h2 className="chatBotTitle">FURIA CHAT-BOT</h2>
+          <h2 className="chatBotTitle">
+            FURIA <br></br> CHAT-BOT</h2>
           <img className="furiaLogo" src="/src/assets/furiaLogo.png" />
         </div>
+      <div className="chatsDiv">
         <div className="paragraphsDiv">
           { messages.map((message, index) => (
             "user" in message ? (
@@ -28,7 +29,6 @@ function ChatBot() {
             )
           ))}
         </div>
-      </section>
       <form onSubmit={(event) => sendMessage({
         event, currentMessage, setMessages, messages, setCurrentMessage
         }) }>
@@ -41,7 +41,8 @@ function ChatBot() {
           />
           <button className="formButton"></button>
       </form>
-    </div>
+      </div>
+    </section>
   )
 }
 

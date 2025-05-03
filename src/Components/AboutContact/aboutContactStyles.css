@@ -1,11 +1,32 @@
 .mainAboutContactSection {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  height: 600px;
+  width: 400px;
 }
 
-.sectionTitle {}
+.sectionTitle {
+  color: #E1B833;
+  font-family: 'Metamorphous';
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+  text-shadow: 0px 4px 4px 0px #00000073;
+}
 
-.aboutParagraph {}
+.aboutParagraph {
+  color: #FFFFFF;
+  font-family: 'Metamorphous';
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+}
 
 .socialsDiv {
   display: flex;

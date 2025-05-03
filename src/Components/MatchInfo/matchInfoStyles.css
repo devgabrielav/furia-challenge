@@ -1,18 +1,21 @@
 .firstSection {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 500px;
 }
 
 .matchTitle {
   background: none;
   color: #E1B833;
   font-family: 'Metamorphous';
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
   text-align: center;
-  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5) !important;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
 .matchesMainDiv {
@@ -21,37 +24,70 @@
   display: flex;
   flex-direction: column;
   height: 35em;
-  width: 32.125em;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  width: 30em;
 }
 
 .matchDiv {
+  align-items: center;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.matchContent {
+  align-items: center;
+  display: flex;
+  height: 80px;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .matchNameDiv {
   display: flex;
+  padding-left: 10px;
+  width: 100%;
 }
+
 .matchLogo {
   height: 10px;
   width: 10px;
 }
 
 .matchName {
+  color: #FFFFFF;
   font-family: 'Mina';
-  font-size: 8.5px;
+  font-size: 0.700rem;
+  font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
   text-align: center;
-  font-weight: 400;
 }
 
 .matchStatusInfoDiv {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 7px;
+  height: 100%;
+  justify-content: center;
+  padding-left: 5px;
+  width: 50px;
 }
 
 .matchStatus {
+  border-radius: 2px;
+  border-width: 1px;
   color: #FFFFFF;
+  display: flex;
+  font-family: 'Mina';
+  font-size: 0.800rem;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  padding: 5px 5px 1px 5px;
+  text-align: center;
 }
 
 .matchStatus.running {
@@ -62,41 +98,128 @@
   background-color: #4C4B4B;
 }
 
-.matchI {}
+.matchI {
+  color: #FFFFFF;
+  font-family: 'Mina';
+  font-size: 0.800rem;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+}
 
 .matchInfoDiv {
   display: flex;
-  flex-direction: column;
+}
+
+.dateTeamsDiv {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .teamsResultsDiv {
+  align-items: center;
   display: flex;
+  justify-content: center;
 }
-.teamName {}
+
+.teamName {
+  color: #FFFFFF;
+  font-family: 'Mina';
+  font-size: 0.800rem;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+}
 
 .teamLogo {
-  height: 15px;
-  width: 15px;
+  height: 25px;
+  width: 25px;
 }
-.pointsResult {}
 
-.matchTotal {}
+.pointsResult {
+  font-family: 'Mina';
+  font-size: 0.800rem;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+}
+
+.matchTotal {
+  color: #FFFFFF;
+  font-family: 'Mina';
+  font-size: 0.800rem;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center
+}
 
 .timeDiv {
   display: flex;
 }
 
-.timeSpan {}
-
-.liveStreamsDiv{
+.dateTimeDiv {
+  align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-.liveStreamTitle  {}
+.dateSpan {
+  color: #FFFFFF;
+  font-family: 'Mina';
+  font-size: 0.700rem;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+}
+
+.timeSpan {
+  color: #FFFFFF;
+  font-family: 'Mina';
+  font-size: 0.700rem;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+}
+
+.liveStreamsDiv{
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.liveStreamTitle {
+  color: #FFFFFF;
+  font-family: 'Mina';
+  font-size: 0.800rem;
+  font-weight: 400;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+}
 
 .liveStreams {
   display: flex;
 }
 
-.liveStreamTag {}
+.liveStreamTag {
+  align-items: center;
+  color: #FFFFFF;
+  display: flex;
+  font-family: 'Mina';
+  font-size: 0.800rem;
+  font-weight: 400;
+  gap: 3px;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 15%;
+  line-height: 100%;
+  text-align: center;
+}

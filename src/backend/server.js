@@ -24,7 +24,7 @@ app.get('/matches', async (_req, res) => {
 });
 
 app.post('/send-message', async (req, res) => {
-  const { chatId, message } = req.body;
+  const { message } = req.body;
 
   try {
     const reply = await callOpenRouter(message);
@@ -35,3 +35,4 @@ app.post('/send-message', async (req, res) => {
     res.status(500).json({ success: false, error: 'Erro ao processar a mensagem' });
   }
 });
+

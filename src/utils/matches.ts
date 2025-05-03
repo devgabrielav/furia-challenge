@@ -13,7 +13,7 @@ type GameType = {
   }
 }
 
-type OpponentType = {
+export type OpponentType = {
   type: string,
   opponent: {
       id: number,
@@ -100,14 +100,26 @@ export const fetchMatches = async (): Promise<MatchType[]> => {
   return matches.slice(0, 10);
 }
 
-export const dateConvert = (date: string) => {
+export const dateConvert = (date: string): string => {
+  const typedDate = new Date(date);
+  const day = String(typedDate.getDate()).padStart(2, '0');
+  const month = String(typedDate.getMonth()).padStart(2, '0');
+
+  return `${day}/${month}`;
+}
+
+export const timeConvert = (match: MatchType, date: string): string => {
   const typedDate = new Date(date);
   const hours = String(typedDate.getHours()).padStart(2, '0');
   const minutes = String(typedDate.getMinutes()).padStart(2, '0');
-  const seconds = String(typedDate.getSeconds()).padStart(2, '0');
 
-  const formattedDate = `${hours}:${minutes}:${seconds}s`;
-  return formattedDate;
+  if (match.status === 'running') {
+    return 'EM ANDAMENTO';
+  } else if (match.status === 'not_started' && date === null) {
+    return '';
+  }
+
+  return `${hours}:${minutes}h`;
 }
 
 export const matchType = (type: string, numberOfGames: number): string => {
@@ -118,3 +130,52 @@ export const matchType = (type: string, numberOfGames: number): string => {
   }
   return `RBHG${numberOfGames}`
 }
+
+export const channelNameExtract = (url: string): string => {
+  const regex = /https:\/\/www\.twitch\.tv\/([^\\/]+)/;
+  const match = url.match(regex);
+  return match ? match[1] : 'Youtube';
+}
+
+export const matchTotal = (match: MatchType): string => {
+  const firstTeamTotal = match.results.find((team) => match.opponents[0].opponent.id === team.team_id);
+  const secondTeamTotal = match.results.find((team) => match.opponents[1].opponent.id === team.team_id);
+
+  return `${firstTeamTotal?.score} : ${secondTeamTotal?.score}`;
+}
+
+type PointsType = {
+  string: string;
+  color: string;
+}
+
+export const pointsResult = (match: MatchType, team: OpponentType): PointsType => {
+  if (match.status === "finished") {
+    return match.winner_id === team.opponent.id ? {string: 'W', color: '#00CE00'} : { string: 'L', color: '#FF0000'};
+  } else if (match.status === 'not_started') {
+    return { string: 'NP', color: '#E1B833'};
+  }
+
+  const lastRoundPoints = match.results.find((result) => result.team_id === team.opponent.id)?.score;
+  const opponent = match.results.find((result) => result.team_id !== team.opponent.id)?.score;
+
+  const data = {
+    string: String(opponent)!,
+    color: lastRoundPoints! > opponent! ? '#00CE00' : '#FF0000',
+  }
+  return data;
+}
+
+export const getFullDate = (tourneyStartDate: string, tourneyEndDate: string): string => {
+  const typedStartDate = new Date(tourneyStartDate);
+  const typedEndDate = new Date(tourneyEndDate);
+  
+  const startDay = String(typedStartDate.getDate()).padStart(2, '0');
+  const endDay = String(typedEndDate.getDate()).padStart(2, '0');
+  
+  const month = typedEndDate.getMonth();
+  const stringMonth = new Intl.DateTimeFormat('pt', { month: 'long' }).format(new Date(2000, month));
+  const capitalizedMonth = stringMonth.charAt(0).toUpperCase() + stringMonth.slice(1);
+
+  return `${startDay} a ${endDay} de ${capitalizedMonth}`;
+};
