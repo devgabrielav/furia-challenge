@@ -97,7 +97,7 @@ export const fetchMatches = async (): Promise<MatchType[]> => {
   const response = await fetch('http://localhost:3001/matches');
   const matches: MatchType[] = await response.json();
 
-  return matches.slice(0, 10);
+  return matches.slice(0, 6);
 }
 
 export const dateConvert = (date: string): string => {
@@ -108,12 +108,12 @@ export const dateConvert = (date: string): string => {
   return `${day}/${month}`;
 }
 
-export const timeConvert = (match: MatchType, date: string): string => {
+export const timeConvert = (match: MatchType, date: string, type: 'begin' | 'end'): string => {
   const typedDate = new Date(date);
   const hours = String(typedDate.getHours()).padStart(2, '0');
   const minutes = String(typedDate.getMinutes()).padStart(2, '0');
 
-  if (match.status === 'running') {
+  if (match.status === 'running' && type === 'end') {
     return 'EM ANDAMENTO';
   } else if (match.status === 'not_started' && date === null) {
     return '';
@@ -160,7 +160,7 @@ export const pointsResult = (match: MatchType, team: OpponentType): PointsType =
   const opponent = match.results.find((result) => result.team_id !== team.opponent.id)?.score;
 
   const data = {
-    string: String(opponent)!,
+    string: `(${lastRoundPoints!})`,
     color: lastRoundPoints! > opponent! ? '#00CE00' : '#FF0000',
   }
   return data;

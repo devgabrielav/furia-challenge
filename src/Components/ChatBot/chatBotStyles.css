@@ -1,57 +1,130 @@
 .chatBotMainSection {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  height: 670px;
-  width: 400px;
+  height: 99%;
+  width: 35em;
 }
 
 .chatsDiv {
+  align-items: center;
   border: 3px solid #E1B833;
   border-radius: 20px;
   box-shadow: 0px 0px 8px 0px #E1B8332B;
   background: #252424;
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  max-height: 600px;
+  overflow: hidden;
+  width: 90%;
 }
 
 .chatTitleDiv {
+  align-items: center;
   display: flex;
+  justify-content: center;
+  margin-left: 40px;
+  width: 100%;
 }
 
 .chatBotTitle {
   color: #E1B833;
   font-family: 'Metamorphous';
-  font-size: 2rem;
+  font-size: 3.5rem;
   font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
   text-align: center;
   text-shadow: 0px 4px 4px 0px #00000073;
+  width: 600px;
 }
 
 .furiaLogo {
-  height: 100px;
-  width: 100px;
+  height: 10em;
+  width: 10em;
 }
 
 .paragraphsDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scrollbar-color: #dad7d7 #F4F4F4;
+  overflow-y: auto;
+  width: 100%;
+  height: auto;  
 }
 
-.botParagraphDiv {}
+.botParagraphDiv {
+  align-self: flex-start;
+  background: linear-gradient(180deg, #373638 0%, #302E2E 100%);
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  height: auto;
+  padding: 20px;
+  text-align: start;
+  width: 340px;
+}
 
-.botParagraph {}
+.botParagraph {
+  color: #D2D2D2;
+  font-family: 'Neuton';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 1px;
+}
 
-.userParagraphDiv {}
+.userParagraphDiv {
+  align-self: flex-end;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background: linear-gradient(180deg, #373638 0%, #302E2E 100%);
+  height: auto;
+  padding: 20px;
+  text-align: start;
+  width: 340px;
+}
 
-.userParagraph {}
+.userParagraph {
+  color: #D2D2D2;
+  font-family: 'Neuton';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 1px;
+}
 
 form {
+  align-items: center;
+  border: 2px solid #E1B833;
+  border-radius: 30px;
+  border-width: 2px;
   display: flex;
+  height: 69px;
+  margin: 5px 15px 5px 15px;
+  padding-right: 2px;
+  width: 98%;
 }
 
-.inputForm {}
+.inputForm {
+  color: #D2D2D2;
+  background: none;
+  border: none;
+  border-radius: 30px;
+  border-width: 2px;
+  font-size: 16px;
+  height: 100%;
+  outline: none;
+  padding-left: 15px;
+  width: 100%;
+}
 
 .formButton {
   background: none;
@@ -60,6 +133,7 @@ form {
   background-position: center;
   background-repeat: no-repeat;
   border: none;
+  border-radius: 20px;
   cursor: pointer;
   height: 68px;
   width: 68px;

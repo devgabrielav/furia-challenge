@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { sendMessage } from "../../utils/aboutChat";
 import './chatBotStyles.css';
 
@@ -7,6 +7,21 @@ export type MessagesType = { user: string; } | { bot: string; }
 function ChatBot() {
   const [currentMessage, setCurrentMessage] = useState<string>('');
   const [messages, setMessages] = useState<MessagesType[]>([]);
+  const endOfMessagesRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (endOfMessagesRef.current) {
+      endOfMessagesRef.current?.lastElementChild?.scrollIntoView();
+    }
+  }, [messages]);
+
+  const handleSendMessage = async (event: ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    await sendMessage({
+      currentMessage, setMessages, messages, setCurrentMessage
+      })
+  }
 
   return(
     <section className="chatBotMainSection">
@@ -16,7 +31,7 @@ function ChatBot() {
           <img className="furiaLogo" src="/src/assets/furiaLogo.png" />
         </div>
       <div className="chatsDiv">
-        <div className="paragraphsDiv">
+        <div className="paragraphsDiv" ref={endOfMessagesRef}>
           { messages.map((message, index) => (
             "user" in message ? (
               <div className="userParagraphDiv" key={index}>
@@ -29,9 +44,7 @@ function ChatBot() {
             )
           ))}
         </div>
-      <form onSubmit={(event) => sendMessage({
-        event, currentMessage, setMessages, messages, setCurrentMessage
-        }) }>
+      <form onSubmit={ handleSendMessage }>
         <input
           type="text"
           value={ currentMessage }

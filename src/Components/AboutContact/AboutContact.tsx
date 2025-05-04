@@ -4,7 +4,7 @@ import './aboutContactStyles.css';
 function AboutContact() {
   return (
     <section className="mainAboutContactSection">
-      <h2 className="sectionTitle">SOBRE FURIA</h2>
+      <h2 className="sectionTitle">SOBRE A FURIA</h2>
       { aboutParagraphs.map((paragraph, index) => (
         <p className="aboutParagraph" key={index}>{paragraph}</p>
       )) }
@@ -32,8 +32,8 @@ function AboutContact() {
       <span className="contactSpan">Contato Inteligente da FURIA:</span>
       <a className="socialTag" href="https://wa.me/5511993404466" target="_blank">
         <img className="socialLogo" src="/src/assets/whatsapp.png" />
+        <span className="obsSpan">Closed beta</span>
       </a>
-      <span className="obsSpan">Closed beta</span>
     </section>
   )
 }

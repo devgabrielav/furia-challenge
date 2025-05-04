@@ -19,7 +19,6 @@ export const aboutParagraphs: string[] = [
 ];
 
 type SendMessageType = {
-  event: React.FormEvent<HTMLFormElement>;
   currentMessage: string;
   setMessages: React.Dispatch<React.SetStateAction<MessagesType[]>>;
   messages: MessagesType[];
@@ -29,9 +28,8 @@ type SendMessageType = {
 const chatId = 'furia_id_chat';
 
 export const sendMessage = async ({
-    event, currentMessage, setMessages, setCurrentMessage
+    currentMessage, setMessages, setCurrentMessage
   }: SendMessageType) => {
-  event.preventDefault();
 
   setMessages((prevMessages) => [
     ...prevMessages,

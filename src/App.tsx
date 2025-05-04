@@ -1,11 +1,15 @@
-import MainContent from './Components/MainContent/MainContent';
+import AboutContact from './Components/AboutContact/AboutContact';
+import ChatBot from './Components/ChatBot/ChatBot';
+import MatchInfo from './Components/MatchInfo/MatchInfo';
 import './styles.css';
 
 function App() {
 
   return (
     <div className='mainPage'>
-      <MainContent />
+      <MatchInfo />
+      <ChatBot />
+      <AboutContact />
     </div>
   )
 }

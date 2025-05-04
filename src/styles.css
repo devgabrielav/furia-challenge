@@ -5,8 +5,8 @@
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  height: 100%;
+  gap: 80px;
+  height: 100vh;
   justify-content: center;
-  overflow: hidden;
-  width: 100%;
+  width: 100vw;
 }

@@ -2,8 +2,43 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   justify-content: center;
   width: 500px;
+}
+
+.firstItems {
+  align-items: end;
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px;
+  text-align: start;
+  margin-bottom: 15px;
+}
+
+.legends {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.legendP {
+  color: #FFFFFF;
+  font-family: 'Mina';
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  width:200px;
+}
+
+.liveStreamTitle {
+  color: #FFFFFF;
+  font-family: 'Mina';
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 100%;
+  text-align: center;
 }
 
 .matchTitle {
@@ -23,23 +58,26 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: 35em;
-  overflow-y: scroll;
+  gap: 15px;
+  height: 700px;
+  padding: 20px 0px;
   scrollbar-width: thin;
-  width: 30em;
+  overflow-y: auto;
+  width: 650px;
 }
 
 .matchDiv {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .matchContent {
   align-items: center;
   display: flex;
-  height: 80px;
+  height: 100px;
   justify-content: space-evenly;
   width: 100%;
 }
@@ -58,10 +96,11 @@
 .matchName {
   color: #FFFFFF;
   font-family: 'Mina';
-  font-size: 0.700rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
+  margin-left: 10px;
   text-align: center;
 }
 
@@ -73,7 +112,7 @@
   height: 100%;
   justify-content: center;
   padding-left: 5px;
-  width: 50px;
+  width: 15%;
 }
 
 .matchStatus {
@@ -82,7 +121,7 @@
   color: #FFFFFF;
   display: flex;
   font-family: 'Mina';
-  font-size: 0.800rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
@@ -101,7 +140,7 @@
 .matchI {
   color: #FFFFFF;
   font-family: 'Mina';
-  font-size: 0.800rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
@@ -110,38 +149,65 @@
 
 .matchInfoDiv {
   display: flex;
+  gap: 10px;
+  height: 100%;
+  justify-content: end;
+  text-align: center;
+  width: 100%;
 }
 
 .dateTeamsDiv {
   align-items: center;
   display: flex;
+  gap: 15px;
   justify-content: center;
+  text-align: center;
+}
+
+.line {
+  background-color: #e7bbbb;
+  height: 100%;
+  width: 1px;
+  border-width: 1px;
 }
 
 .teamsResultsDiv {
   align-items: center;
   display: flex;
+  gap: 10px;
+  justify-content: start;
+  width: 360px;
+}
+
+.teamLogoNameDiv {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   justify-content: center;
+  text-align: center;
+  width: 120px;
 }
 
 .teamName {
   color: #FFFFFF;
   font-family: 'Mina';
-  font-size: 0.800rem;
+  font-size: 1rem;
   font-weight: 400;
-  letter-spacing: 15%;
+  letter-spacing: 1px;
   line-height: 100%;
   text-align: center;
+  width: 80px;
 }
 
 .teamLogo {
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
 }
 
 .pointsResult {
   font-family: 'Mina';
-  font-size: 0.800rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
@@ -151,7 +217,7 @@
 .matchTotal {
   color: #FFFFFF;
   font-family: 'Mina';
-  font-size: 0.800rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
@@ -166,12 +232,14 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 5px;
+  width: 10%;
 }
 
 .dateSpan {
   color: #FFFFFF;
   font-family: 'Mina';
-  font-size: 0.700rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
@@ -181,7 +249,7 @@
 .timeSpan {
   color: #FFFFFF;
   font-family: 'Mina';
-  font-size: 0.700rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 15%;
   line-height: 100%;
@@ -192,21 +260,18 @@
   align-items: start;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   justify-content: center;
-}
-
-.liveStreamTitle {
-  color: #FFFFFF;
-  font-family: 'Mina';
-  font-size: 0.800rem;
-  font-weight: 400;
-  letter-spacing: 15%;
-  line-height: 100%;
   text-align: center;
+  width: 120px;
 }
 
 .liveStreams {
+  align-items: center;
   display: flex;
+  height: 100%;
+  justify-content: end;
+  width: 100%;
 }
 
 .liveStreamTag {
@@ -214,12 +279,13 @@
   color: #FFFFFF;
   display: flex;
   font-family: 'Mina';
-  font-size: 0.800rem;
+  font-size: 1rem;
   font-weight: 400;
-  gap: 3px;
-  justify-content: center;
+  gap: 8px;
+  justify-content: end;
   text-decoration: none;
   letter-spacing: 15%;
   line-height: 100%;
   text-align: center;
+  width: 100%;
 }
