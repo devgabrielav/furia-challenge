@@ -3,7 +3,9 @@
   display: flex;
   flex-direction: column;
   height: 99%;
-  width: 35em;
+  margin-left: 50px;
+  margin-right: -50px;
+  width: 37em;
 }
 
 .chatsDiv {
@@ -16,9 +18,9 @@
   flex-direction: column;
   height: 100%;
   justify-content: flex-end;
-  max-height: 600px;
+  max-height: 640px;
   overflow: hidden;
-  width: 90%;
+  width: 95%;
 }
 
 .chatTitleDiv {
@@ -101,6 +103,11 @@
   letter-spacing: 1px;
 }
 
+.typingDots {
+  height: 35px;
+  width: 55px;
+}
+
 form {
   align-items: center;
   border: 2px solid #E1B833;
@@ -137,4 +144,60 @@ form {
   cursor: pointer;
   height: 68px;
   width: 68px;
+}
+
+#dotsDiv {
+  width: 100px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1360px) {
+  #dotsDiv {
+    width: 80px;
+  }
+  .typingDots {
+    height: 25px;
+    width: 45px;
+  }
+  .chatBotMainSection {
+    margin-left: -70px;
+    margin-right: -90px;
+    width: 35em;
+  }
+  .chatsDiv {
+    max-height: 540px;
+    width: 92%;
+  }
+  .chatTitleDiv {
+    margin-left: 20px;
+  }
+  .chatBotTitle {
+    font-size: 2.8rem;
+    letter-spacing: 10%;
+    width: 90%;
+  }
+  .furiaLogo {
+    height: 8em;
+    width: 8em;
+  }
+  .botParagraphDiv, .userParagraphDiv {
+    padding: 16px;
+    width: 300px;
+  }
+  .botParagraph, .userParagraph {
+    font-size: 15px;
+    line-height: 110%;
+  }
+  form {
+    height: 60px;
+    width: 96%;
+  }
+  .inputForm {
+    font-size: 15px;
+  }
+  .formButton {
+    height: 58px;
+    width: 58px;
+  }
 }

@@ -1,4 +1,4 @@
-import { MessagesType } from "../Components/ChatBot/ChatBot";
+import { SendMessageType } from "./Types";
 
 export const aboutParagraphs: string[] = [
   `
@@ -18,25 +18,19 @@ export const aboutParagraphs: string[] = [
   `
 ];
 
-type SendMessageType = {
-  currentMessage: string;
-  setMessages: React.Dispatch<React.SetStateAction<MessagesType[]>>;
-  messages: MessagesType[];
-  setCurrentMessage: React.Dispatch<React.SetStateAction<string>>;
-}
-
 const chatId = 'furia_id_chat';
 
 export const sendMessage = async ({
-    currentMessage, setMessages, setCurrentMessage
+    setLoading, currentMessage,
+    setMessages, setCurrentMessage, setButtonDisabled
   }: SendMessageType) => {
-
+    setButtonDisabled(true);
   setMessages((prevMessages) => [
     ...prevMessages,
     { user: currentMessage }
   ]);
   setCurrentMessage('');
-
+  setLoading(true);
   try {
     const response = await fetch("http://localhost:3001/send-message", {
       method: "POST",
@@ -63,4 +57,6 @@ export const sendMessage = async ({
       { bot: 'Erro ao enviar mensagem' }
     ]);
   }
+  setLoading(false);
+  setButtonDisabled(false);
 }

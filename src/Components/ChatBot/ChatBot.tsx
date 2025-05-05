@@ -1,12 +1,13 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { sendMessage } from "../../utils/aboutChat";
 import './chatBotStyles.css';
-
-export type MessagesType = { user: string; } | { bot: string; }
+import { MessagesType } from "../../utils/Types";
 
 function ChatBot() {
   const [currentMessage, setCurrentMessage] = useState<string>('');
   const [messages, setMessages] = useState<MessagesType[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
   const endOfMessagesRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -19,7 +20,8 @@ function ChatBot() {
     event.preventDefault();
 
     await sendMessage({
-      currentMessage, setMessages, messages, setCurrentMessage
+      setLoading, currentMessage, setMessages,
+      setCurrentMessage, setButtonDisabled
       })
   }
 
@@ -44,7 +46,18 @@ function ChatBot() {
             )
           ))}
         </div>
-      <form onSubmit={ handleSendMessage }>
+          <div className="botParagraphDiv" id="dotsDiv" style={
+              { display: loading ? 'flex' : 'none' }
+              }>
+            <img src="/src/assets/typing.gif" className="typingDots" />
+          </div>
+      <form onSubmit={(event: ChangeEvent<HTMLFormElement>) => {
+        if (!buttonDisabled) {
+          handleSendMessage(event);
+        } else {
+          event.preventDefault();
+        }
+      }} >
         <input
           type="text"
           value={ currentMessage }
@@ -52,7 +65,13 @@ function ChatBot() {
           onChange={ (event) => setCurrentMessage(event.target.value) }
           placeholder="Digite sua mensagem"
           />
-          <button className="formButton"></button>
+          <button
+            className="formButton"
+            disabled={ buttonDisabled }
+            style={{     filter: buttonDisabled ? 'grayscale(100%)' : 'none',
+              cursor: buttonDisabled ? 'not-allowed' : 'pointer' }}
+          >
+          </button>
       </form>
       </div>
     </section>

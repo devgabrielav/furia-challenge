@@ -73,3 +73,36 @@
   letter-spacing: 15%;
   text-align: center;
 }
+
+@media (max-width: 1360px) {
+  .mainAboutContactSection {
+    height: 100%;
+    margin-right: 15px;
+    width: 24em;
+  }
+  .sectionTitle {
+    font-size: 36px;
+    letter-spacing: 10%;
+    width: 90%; 
+  }
+  .aboutParagraph {
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding-left: 20px;
+    margin-left: 0px;
+    width: 23em;
+  }
+  .socialsDiv {
+    gap: 12px;
+  }
+  .socialLogo {
+    height: 35px;
+    width: 35px;
+  }
+  .contactSpan {
+    font-size: 15px;
+  }
+  .obsSpan {
+    font-size: 18px;
+  }
+}

@@ -13,7 +13,6 @@
   justify-content: center;
   padding: 0px 20px;
   text-align: start;
-  margin-bottom: 15px;
 }
 
 .legends {
@@ -28,7 +27,7 @@
   font-size: 0.9rem;
   letter-spacing: 1px;
   margin-bottom: 10px;
-  width:200px;
+  width: 200px;
 }
 
 .liveStreamTitle {
@@ -77,30 +76,26 @@
 .matchContent {
   align-items: center;
   display: flex;
-  height: 100px;
-  justify-content: space-evenly;
+  height: 170px;
   width: 100%;
 }
 
 .matchNameDiv {
+  border-top: 1px solid #282828;
   display: flex;
   padding-left: 10px;
   width: 100%;
-}
-
-.matchLogo {
-  height: 10px;
-  width: 10px;
 }
 
 .matchName {
   color: #FFFFFF;
   font-family: 'Mina';
   font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 15%;
+  font-weight: 700;
+  letter-spacing: 1px;
   line-height: 100%;
-  margin-left: 10px;
+  margin-left: 14px;
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -149,11 +144,12 @@
 
 .matchInfoDiv {
   display: flex;
-  gap: 10px;
+  gap: 30px;
   height: 100%;
-  justify-content: end;
+  justify-content: center;
   text-align: center;
-  width: 100%;
+  margin-right: 30px;
+  width: 540px;
 }
 
 .dateTeamsDiv {
@@ -165,18 +161,20 @@
 }
 
 .line {
-  background-color: #e7bbbb;
-  height: 100%;
-  width: 1px;
+  background-color: #282828;
   border-width: 1px;
+  height: 100%;
+  margin-left: 15px;
+  margin-right: -10px;
+  width: 1px;
 }
 
 .teamsResultsDiv {
   align-items: center;
   display: flex;
   gap: 10px;
-  justify-content: start;
-  width: 360px;
+  justify-content: center;
+  width: 350px;
 }
 
 .teamLogoNameDiv {
@@ -186,7 +184,7 @@
   gap: 10px;
   justify-content: center;
   text-align: center;
-  width: 120px;
+  width: 110px;
 }
 
 .teamName {
@@ -254,6 +252,7 @@
   letter-spacing: 15%;
   line-height: 100%;
   text-align: center;
+  white-space: pre-line;
 }
 
 .liveStreamsDiv{
@@ -263,7 +262,7 @@
   gap: 10px;
   justify-content: center;
   text-align: center;
-  width: 120px;
+  width: 130px;
 }
 
 .liveStreams {
@@ -271,7 +270,6 @@
   display: flex;
   height: 100%;
   justify-content: end;
-  width: 100%;
 }
 
 .liveStreamTag {
@@ -282,10 +280,128 @@
   font-size: 1rem;
   font-weight: 400;
   gap: 8px;
-  justify-content: end;
+  justify-content: start;
   text-decoration: none;
   letter-spacing: 15%;
   line-height: 100%;
   text-align: center;
-  width: 100%;
+  width: 100px;
+}
+
+.liveStreamTag img {
+  height: 20px; 
+  width: 20px;
+}
+
+@media (max-width: 1360px) {
+  .firstSection {
+    height: 99%;
+    margin-left: 25px;
+  }
+  .legends {
+    margin-top: -10px;
+    margin-left: -10px;
+    gap: 10px;
+  }
+  .legendP {
+    font-size: 0.6rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    width: 150px;
+  }
+  .liveStreamTitle {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+  .matchTitle {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+  .matchesMainDiv {
+    gap: 5px;
+    max-height: 600px;
+    scrollbar-width: none;
+    width: 100%;
+  }
+  .matchContent {
+    height: 70px;
+  }
+  .matchName {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  .matchStatusInfoDiv {
+    gap: 5px;
+    width: 50px;
+  }
+  .matchStatus {
+    font-size: 0.7rem;
+    letter-spacing: 0.7px;
+    padding: 4px 6px;
+  }
+  .matchI {
+    font-size: 0.7rem;
+    letter-spacing: 0.7px;
+  }
+  .matchInfoDiv {
+    gap: 15px;
+    margin: 0;
+    width: 400px;
+  }
+  .dateSpan,
+  .timeSpan {
+    font-size: 0.55rem;
+    letter-spacing: 0.6px;
+  }
+  
+  .pointsResult,
+  .matchTotal {
+    font-size: 0.6rem;
+    letter-spacing: 0.6px;
+    width: 40px;
+  }
+  .teamsResultsDiv {
+    gap: 5px;
+    width: 240px;
+  }
+  .teamLogoNameDiv {
+    gap: 5px;
+    width: 80px;
+  }
+  .teamName {
+    font-size: 0.65rem;
+    letter-spacing: 0.6px;
+    width: 100%;
+  }
+  .teamLogo {
+    height: 20px;
+    width: 20px;
+  }
+  .pointsResult {
+    font-size: 0.7rem;
+    letter-spacing: 15%;
+  }
+  .matchTotal {
+    font-size: 0.7rem;
+    letter-spacing: 0.7px;
+  }
+
+  .dateTimeDiv {
+    width: 5%;
+  }
+
+  .liveStreamsDiv{
+    gap: 5px;
+    width: 800px;
+  }
+  .liveStreamTag {
+    font-size: 0.7rem;
+    gap: 4px;
+    letter-spacing: 0.7px;
+    width: 100px;
+  }
+  .liveStreamTag img {
+    height: 15px;
+    width: 15px;
+  }
 }
