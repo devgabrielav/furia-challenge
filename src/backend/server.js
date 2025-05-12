@@ -5,9 +5,11 @@ import { callOpenRouter, getLatestMatches } from "../utils/backendUtils.js";
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: "https://furia-challenge-production.up.railway.app",
+}));
 
+app.use(express.json());
 app.use(express.static(path.join(process.cwd(), "src", "dist")));
 
 app.get("/matches", async (_req, res) => {
@@ -30,7 +32,6 @@ app.post("/send-message", async (req, res) => {
     res.status(500).json({ success: false, error: "Erro ao processar a mensagem" });
   }
 });
-
 
 app.get(/.*/, (req, res) => {
   res.sendFile(path.join(process.cwd(), "src", "dist", "index.html"));
