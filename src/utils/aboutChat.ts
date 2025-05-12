@@ -1,4 +1,5 @@
 import { SendMessageType } from "./Types";
+import { API_URL } from '../../config';
 
 export const aboutParagraphs: string[] = [
   `
@@ -32,7 +33,7 @@ export const sendMessage = async ({
   setCurrentMessage('');
   setLoading(true);
   try {
-    const response = await fetch("http://localhost:3001/send-message", {
+    const response = await fetch(`${API_URL}/send-message`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
