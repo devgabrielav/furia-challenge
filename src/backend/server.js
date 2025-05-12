@@ -10,11 +10,6 @@ app.use(express.json());
 
 app.use(express.static(path.join(process.cwd(), "src", "dist")));
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
-
 app.get("/matches", async (_req, res) => {
   try {
     const latestMatches = await getLatestMatches();
@@ -36,6 +31,12 @@ app.post("/send-message", async (req, res) => {
   }
 });
 
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(process.cwd(), "src", "dist", "index.html"));
+});
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
