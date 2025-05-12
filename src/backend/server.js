@@ -10,10 +10,6 @@ app.use(express.json());
 
 app.use(express.static(path.join(process.cwd(), "src", "dist")));
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(process.cwd(), "src", "dist", "index.html"));
-});
-
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
@@ -38,4 +34,8 @@ app.post("/send-message", async (req, res) => {
     console.error("Erro ao processar a mensagem:", error);
     res.status(500).json({ success: false, error: "Erro ao processar a mensagem" });
   }
+});
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(process.cwd(), "src", "dist", "index.html"));
 });
