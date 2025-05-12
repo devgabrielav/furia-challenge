@@ -2,7 +2,7 @@ import { MatchType, OpponentType, PointsType } from "./Types";
 import { API_URL } from '../../config';
 
 export const fetchMatches = async (): Promise<MatchType[]> => {
-  const response = await fetch(`${API_URL}1/matches`);
+  const response = await fetch(`${API_URL}/matches`);
   const matches: MatchType[] = await response.json();
 
   return matches.slice(0, 10);
