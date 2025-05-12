@@ -36,6 +36,6 @@ app.post("/send-message", async (req, res) => {
   }
 });
 
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(process.cwd(), "src", "dist", "index.html"));
 });
