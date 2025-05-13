@@ -1,7 +1,7 @@
 import path from "path";
 import express from "express";
 import cors from "cors";
-import { callOpenRouter, getLatestMatches } from "../utils/backendUtils.js";
+import { callOpenRouter, getLatestMatches } from "./backendUtils.js";
 
 const app = express();
 
