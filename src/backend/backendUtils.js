@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import { config } from 'dotenv';
-import { getFuriaUpdatedInfo, getInfosHLTV } from '../utils/scraping.js';
+import { getFuriaUpdatedInfo, getInfosHLTV } from './scraping.js';
 
 config();
 const apiKey = process.env.PANDASCORE_API_KEY;
