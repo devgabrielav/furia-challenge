@@ -40,6 +40,8 @@ export const callOpenRouter = async (userMessage) => {
   });
   
   const data = await response.json();
+
+  console.log(data)
   
   return data.choices[0]?.message?.content || 'Desculpe, não consegui responder.';
 };
@@ -63,7 +65,9 @@ export const getLatestMatches = async () => {
       Authorization: `Bearer ${apiKey}`,
     },
   });
-  const matches = await data.json(); 
+  const matches = await data.json();
+
+  console.log(matches)
 
   return matches;
 }
